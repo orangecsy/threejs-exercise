@@ -54,7 +54,7 @@ function createLights() {
 let obj;
 function createObject() {
   const loader = new THREE.FBXLoader();
-  loader.load('ship1.fbx', function (object) {
+  loader.load('ship.fbx', function (object) {
     obj = object;
     scene.add(object);
     // 载入obj后动画循环
