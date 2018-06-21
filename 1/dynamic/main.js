@@ -48,8 +48,8 @@ function handleWindowResize() {
 // 光照
 function createLights() {
   // 天空的反光颜色，地面的反光颜色，光的强度
-  const light = new THREE.HemisphereLight( 0xFFFFFF, 0xFFFFFF, 0.85 );
-  light.position.set(0, 200, 0);
+  const light = new THREE.HemisphereLight(0xFFFFFF, 0xFFFFFF, 0.85);
+  // light.position.set(0, 200, 0);
   scene.add(light);
 }
 
