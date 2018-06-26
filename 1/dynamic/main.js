@@ -21,7 +21,7 @@ function createScene() {
   camera.position.y = 0;
   camera.position.z = 1000;
   // 交互
-  const controls = new THREE.OrbitControls( camera );
+  const controls = new THREE.OrbitControls(camera);
   controls.target.set(0, 100, 0);
   controls.update();
   // 场景
