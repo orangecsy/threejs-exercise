@@ -55,7 +55,6 @@ function createScene() {
   );
   camera.position.x = 0;
   camera.position.z = 220;
-  // camera.position.z = 2000;
   camera.position.y = 100;
   // 场景
   scene = new THREE.Scene();
@@ -400,8 +399,13 @@ function loop() {
     requestAnimationFrame(loop);
     const deltaTime = clock.getDelta();
     // player移动
-    playerObj.position.x += 2 * mousePos.x;
-    playerObj.position.y -= 2 * mousePos.y;
+    if (OPTIONS.player === 0) {
+      playerObj.position.x += 2 * mousePos.x;
+      playerObj.position.y -= 2 * mousePos.y;
+    } else if (OPTIONS.player === 1) {
+      playerObj.position.x += 1.5 * mousePos.x;
+      playerObj.position.y -= 1.5 * mousePos.y;
+    }
     // player动画
     for (let i = 0; i < mixers.length; i ++) {
       mixers[i].update(deltaTime);
@@ -415,6 +419,7 @@ function loop() {
     redBall.update(deltaTime);
     if (OPTIONS.score < 0) {
       OPTIONS.status = 'start';
+      OPTIONS.score = 0;
       // 归位
       playerObj.position.x = 0;
       playerObj.position.y = 50;
