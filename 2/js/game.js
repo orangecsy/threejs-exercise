@@ -343,7 +343,7 @@ Particle.prototype.animate = function(position, color, scale) {
   });
 }
 
-Particles = function () {
+const Particles = function () {
   this.mesh = new THREE.Object3D();
   scene.add(this.mesh)
 }
@@ -375,7 +375,6 @@ function createObject() {
 
 // 动画循环
 const clock = new THREE.Clock();
-let lastClock = 1;
 function loop() {
   //status: "start",
   if (OPTIONS.status === 'start') {
